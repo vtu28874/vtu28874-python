@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyOkUpL40H5GPmqvfVFlFwXe",
+      "authorship_tag": "ABX9TyN0J/6Zra/diteOX6ExudmQ",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -109,6 +109,53 @@
             "Sorting completed!\n",
             "\n",
             "Execution Time: 0.014813 seconds\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import time\n",
+        "import random\n",
+        "\n",
+        "# Decorator to calculate execution time\n",
+        "def timing_decorator(func):\n",
+        "    def wrapper(*args, **kwargs):\n",
+        "        start_time = time.time()\n",
+        "        result = func(*args, **kwargs)\n",
+        "        end_time = time.time()\n",
+        "        print(f\"\\nExecution Time: {end_time - start_time:.6f} seconds\")\n",
+        "        return result\n",
+        "    return wrapper\n",
+        "\n",
+        "@timing_decorator\n",
+        "def sort_random_numbers():\n",
+        "    numbers = [random.randint(1, 1000) for _ in range(10000)]\n",
+        "    print(\"Sorting 10,000 random numbers...\")\n",
+        "    numbers.sort()\n",
+        "    print(\"Sorting completed!\")\n",
+        "\n",
+        "# Main program\n",
+        "sort_random_numbers()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "llUg-Xdii7zZ",
+        "outputId": "ee34b1a0-36e5-48b1-dfe0-7504d3e4f260"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Sorting 10,000 random numbers...\n",
+            "Sorting completed!\n",
+            "\n",
+            "Execution Time: 0.007712 seconds\n"
           ]
         }
       ]
