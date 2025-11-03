@@ -1,0 +1,134 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyM5K3k5P58w4QmNSeIOKfKi",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vtu28874/vtu28874-python/blob/main/TASK-1\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "25qysVqXZdLV",
+        "outputId": "90f5c82b-8993-4ddd-d8e1-ff738eea9d78"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter first value: 3\n",
+            "Enter second value: 4\n",
+            "Addition: 7.0\n",
+            "Subtraction: -1.0\n",
+            "Multiplication: 12.0\n",
+            "Division: 0.75\n"
+          ]
+        }
+      ],
+      "source": [
+        "num1 = float(input(\"Enter first value: \"))\n",
+        "num2 = float(input(\"Enter second value: \"))\n",
+        "print(\"Addition:\", num1 + num2)\n",
+        "print(\"Subtraction:\", num1 - num2)\n",
+        "print(\"Multiplication:\", num1 * num2)\n",
+        "print(\"Division:\",num1/num2)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = float(input(\"Enter first score: \"))\n",
+        "b = float(input(\"Enter second score: \"))\n",
+        "print(\"a > b:\", a > b)\n",
+        "print(\"a < b:\", a < b)\n",
+        "print(\"a == b:\", a == b)\n",
+        "print(\"a != b:\", a != b)\n",
+        "print(\"a >= b:\", a >= b)\n",
+        "print(\"a <= b:\",a<=b)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "WDhrPZlXZ2Fu",
+        "outputId": "2e7d6994-4881-4ea1-8b21-d30a27897a12"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter first score: 13\n",
+            "Enter second score: 87\n",
+            "a > b: False\n",
+            "a < b: True\n",
+            "a == b: False\n",
+            "a != b: True\n",
+            "a >= b: False\n",
+            "a <= b: True\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "test1 = int(input(\"Enter marks for Test 1: \"))\n",
+        "test2 = int(input(\"Enter marks for Test 2: \"))\n",
+        "test3 = int(input(\"Enter marks for Test 3: \"))\n",
+        "\n",
+        "print(\"Passed all tests: \", test1 > 40 and test2 > 40 and test3 > 40)\n",
+        "print(\"Passed at least one test: \", test1 > 40 or test2 > 40 or test3 > 40)\n",
+        "print(\"Failed all tests: \", not (test1 > 40 or test2 > 40 or test3 > 40))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lQKgwTlZaFkR",
+        "outputId": "b5cf1eca-5f6f-4d48-d7f7-3809b40c3092"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter marks for Test 1: 15\n",
+            "Enter marks for Test 2: 25\n",
+            "Enter marks for Test 3: 30\n",
+            "Passed all tests:  False\n",
+            "Passed at least one test:  False\n",
+            "Failed all tests:  True\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
