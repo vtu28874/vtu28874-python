@@ -1,0 +1,148 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMeBPxHuV0D975rkVhT062g",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vtu28874/vtu28874-python/blob/main/TASK-3\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HNt8yHkWbdI5",
+        "outputId": "280c6ae9-3445-4f00-ce06-d7c4c303010c"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Weather Report\n",
+            "Date & Time: Monday, 03 November 25, 03:55 PM\n",
+            "Weather: Sunny\n"
+          ]
+        }
+      ],
+      "source": [
+        "from datetime import datetime\n",
+        "now = datetime.now()\n",
+        "formatted_time = now.strftime(\"%A, %d %B %y, %I:%M %p\")\n",
+        "print(\"Weather Report\")\n",
+        "print(\"Date & Time:\", formatted_time)\n",
+        "print(\"Weather: Sunny\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def factorial(n):\n",
+        "    fact = 1\n",
+        "    for i in range(1, n + 1):\n",
+        "        fact *= i\n",
+        "    return fact\n",
+        "\n",
+        "def is_prime(n):\n",
+        "    if n <= 1:\n",
+        "        return False\n",
+        "    for i in range(2, int(n**0.5) + 1):\n",
+        "        if n % i == 0:\n",
+        "            return False\n",
+        "    return True\n",
+        "import mymath\n",
+        "\n",
+        "num = 5\n",
+        "print(f\"Factorial of {num} is:\", mymath.factorial(num))\n",
+        "\n",
+        "check_num = 7\n",
+        "print(f\"Is {check_num} prime?\", mymath.is_prime(check_num))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 384
+        },
+        "id": "_kyhDPL3bnJ-",
+        "outputId": "3165dccc-4152-4e28-d1ff-fa22d89825f4"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "ModuleNotFoundError",
+          "evalue": "No module named 'mymath'",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mModuleNotFoundError\u001b[0m                       Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipython-input-1930021085.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m     12\u001b[0m             \u001b[0;32mreturn\u001b[0m \u001b[0;32mFalse\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     13\u001b[0m     \u001b[0;32mreturn\u001b[0m \u001b[0;32mTrue\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 14\u001b[0;31m \u001b[0;32mimport\u001b[0m \u001b[0mmymath\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     15\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     16\u001b[0m \u001b[0mnum\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;36m5\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mModuleNotFoundError\u001b[0m: No module named 'mymath'",
+            "",
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0;32m\nNOTE: If your import is failing due to a missing package, you can\nmanually install dependencies using either !pip or !apt.\n\nTo view examples of installing some common dependencies, click the\n\"Open Examples\" button below.\n\u001b[0;31m---------------------------------------------------------------------------\u001b[0m\n"
+          ],
+          "errorDetails": {
+            "actions": [
+              {
+                "action": "open_url",
+                "actionText": "Open Examples",
+                "url": "/notebooks/snippets/importing_libraries.ipynb"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def convert(amount, rate):\n",
+        "    return amount * rate\n",
+        "\n",
+        "inr_amount = 5000\n",
+        "usd_rate = 0.012\n",
+        "\n",
+        "usd_amount = convert(inr_amount, usd_rate)\n",
+        "print(f\"INR amount: {inr_amount} = {usd_amount:.2f} USD\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "uze41MGvby0P",
+        "outputId": "4a883f2d-4c5f-44bd-cab7-2eeddea51f77"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "INR amount: 5000 = 60.00 USD\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
