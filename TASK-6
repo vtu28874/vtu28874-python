@@ -1,0 +1,161 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNItO8a2ZKXI0SxwkrMxwN3",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vtu28874/vtu28874-python/blob/main/TASK-6\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pzn4AC9td5LJ",
+        "outputId": "dbd60eb4-f4fc-46a0-ec88-8ea80850b2d4"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Students records:\n",
+            "\n",
+            "alice 95\n",
+            "bob 90\n",
+            "charle 85\n",
+            "\n",
+            "Updated records:\n",
+            "\n",
+            "alice 95\n",
+            "bob 90\n",
+            "charle 85\n",
+            "shadow 90\n",
+            "jenny 80\n",
+            "leo 75\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Write initial student records\n",
+        "f = open('students.txt', 'w')\n",
+        "f.write('alice 95\\n')\n",
+        "f.write('bob 90\\n')\n",
+        "f.write('charle 85\\n')\n",
+        "f.close()\n",
+        "\n",
+        "# Display initial records\n",
+        "print('Students records:\\n')\n",
+        "f = open('students.txt', 'r')\n",
+        "for i in f:\n",
+        "    print(i.strip())\n",
+        "f.close()\n",
+        "\n",
+        "# Append new records to the same file (fixing filename typo)\n",
+        "f = open('students.txt', 'a')  # Corrected from 'student.txt'\n",
+        "f.write('shadow 90\\n')\n",
+        "f.write('jenny 80\\n')\n",
+        "f.write('leo 75\\n')\n",
+        "f.close()\n",
+        "\n",
+        "# Display updated records\n",
+        "print('\\nUpdated records:\\n')\n",
+        "f = open('students.txt', 'r')\n",
+        "for i in f:\n",
+        "    print(i.strip())\n",
+        "f.close()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Write sample data to the file\n",
+        "f = open('Sample.txt', 'w')\n",
+        "f.write('alice 95\\n')\n",
+        "f.write('bob 90\\n')\n",
+        "f.write('charlie 85\\n')\n",
+        "f.write('shadow 90\\n')\n",
+        "f.write('sunny 80\\n')\n",
+        "f.write('leo 75\\n')\n",
+        "f.close()\n",
+        "\n",
+        "# Read full text\n",
+        "f = open('Sample.txt', 'r')\n",
+        "text = f.read()\n",
+        "f.close()\n",
+        "\n",
+        "# Read lines\n",
+        "f = open('Sample.txt', 'r')\n",
+        "lines = f.readlines()\n",
+        "f.close()\n",
+        "\n",
+        "# Count lines, words, characters\n",
+        "no_of_lines = len(lines)\n",
+        "print('Number of lines:', no_of_lines)\n",
+        "\n",
+        "no_of_words = len(text.split())\n",
+        "print('Number of words:', no_of_words)\n",
+        "\n",
+        "no_of_char = len(text)\n",
+        "print('Number of characters:', no_of_char)\n",
+        "\n",
+        "# Word frequency\n",
+        "words = text.split()\n",
+        "for word in set(words):\n",
+        "    print(word, ';', words.count(word))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "K3QDbc7teGDw",
+        "outputId": "310b2c43-00fb-4f84-9884-8e9445431818"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Number of lines: 6\n",
+            "Number of words: 12\n",
+            "Number of characters: 53\n",
+            "sunny ; 1\n",
+            "bob ; 1\n",
+            "75 ; 1\n",
+            "80 ; 1\n",
+            "shadow ; 1\n",
+            "leo ; 1\n",
+            "charlie ; 1\n",
+            "alice ; 1\n",
+            "95 ; 1\n",
+            "85 ; 1\n",
+            "90 ; 2\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
